@@ -7,28 +7,30 @@
     <title>Coin List</title>
 </head>
 <body>
+  <h3> MY coins </h3>
     <div> table here 
-    <table>
+    <table id="list">
         <tr>
           <th>Favorite</th>
           <th>logo</th>
-          <th>Name of Coin</th>
+          <th>Coin</th>
           <th>price</th>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+<!--Java Script adds content here-->
       </table>
-    </div>
-    
+    </div>  	
+     <!-- Display a payment form -->
+     <form id="payment-form">
+      <div id="payment-element">
+        <!--Stripe.js injects the Payment Element-->
+      </div>
+      <button id="submit">
+        <div class="spinner hidden" id="spinner"></div>
+        <span id="button-text">Pay now</span>
+      </button>
+      <div id="payment-message" class="hidden"></div>
+    </form>
+    <script src="index.js"></script>
 </body>
 </html>
 
-html
