@@ -4,33 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<script src="https://js.stripe.com/v3/"></script>-->
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Coin List</title>
 </head>
 <body>
   <h3> MY coins </h3>
-    <div> table here 
+  <br /><br /><br />
+    <div>
     <table id="list">
         <tr>
           <th>Favorite</th>
           <th>logo</th>
+          <th>Symbol</th>
           <th>Coin</th>
-          <th>price</th>
+          <th>Price</th>
+          <th>Price change persantage 24h</th>
         </tr>
 <!--Java Script adds content here-->
       </table>
     </div>  	
      <!-- Display a payment form -->
+     <div>
      <form id="payment-form">
+
       <div id="payment-element">
         <!--Stripe.js injects the Payment Element-->
       </div>
+      
       <button id="submit">
         <div class="spinner hidden" id="spinner"></div>
         <span id="button-text">Pay now</span>
       </button>
       <div id="payment-message" class="hidden"></div>
     </form>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
