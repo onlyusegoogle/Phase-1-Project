@@ -43,6 +43,7 @@ function displayInfo(coinObj) {
     let emptyStar = document.createElement('img')
     emptyStar.src = './img/empty_star.png'
     // -> td.setAttribute('id', 'starButton')
+    emptyStar.className = "emptyStar"
     td.id = 'starButton'
     td.append(emptyStar)
     // -> Double click event and click event
@@ -84,10 +85,6 @@ function displayInfo(coinObj) {
     td = document.createElement('td')
     tr.append(td)
     td.textContent = coinObj.price_change_percentage_24h
-
-    
-
-
 
     // This made an ERROR:
     // td = document.createElement('td')
