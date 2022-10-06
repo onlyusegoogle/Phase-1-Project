@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://js.stripe.com/v3/"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Coin List</title>
-</head>
-<body>
-  <h3> MY coins </h3>
-  <br /><br /><br />
-    <div>
+  </head>
+  <body>
+  
+    <div class="header">
+      <h1>MY coins</h1>
+      
+    </div>
+
+    <br/>
+    <!-- <div>
+      <ul id="searchButton">Search</ul>
+    </div> -->
     <table id="list">
-        <tr>
+        <tr id="tableHeader">
           <th>Favorite</th>
-          <th>logo</th>
+          <th>Logo</th>
           <th>Symbol</th>
           <th>Coin</th>
           <th>Price</th>
-          <th>Price change persantage 24h</th>
+          <th>24H % Change</th>
+          <!-- <th>Buy Now</th> -->
         </tr>
 <!--Java Script adds content here-->
       </table>
-    </div>  	
+     	
      <!-- Display a payment form -->
-     <div>
+     
      <form id="payment-form">
 
       <div id="payment-element">
@@ -40,6 +48,6 @@
     </form>
     </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
 

@@ -15,7 +15,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&fbclid=IwA
     // TODO -> fetch(('http://localhost:3000/market'))
     .then(Response => Response.json())
     .then(coinArr => {
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 10; i++) {
             displayInfo(coinArr[i])
         }
     })
@@ -61,6 +61,7 @@ function displayInfo(coinObj) {
     td = document.createElement('td')
     tr.append(td)
     const coinImg = document.createElement('img')
+    coinImg.className = "logo"
     td.append(coinImg)
     coinImg.src = coinObj.image
 
@@ -77,11 +78,20 @@ function displayInfo(coinObj) {
     // -> added prices
     td = document.createElement('td')
     tr.append(td)
-    td.textContent = coinObj.current_price
+    td.textContent = `$ ${coinObj.current_price}`
 
     // -> added percantage
     td = document.createElement('td')
     tr.append(td)
     td.textContent = coinObj.price_change_percentage_24h
+
+    
+
+
+
+    // This made an ERROR:
+    // td = document.createElement('td')
+    // tr.textContent = coinObj.price_change_percentage_24h
+
     coinList.append(tr);
 }
