@@ -1,5 +1,6 @@
-[
-    {
+{ "markets" :
+ [
+        {
         "id": "bitcoin",
         "symbol": "btc",
         "name": "Bitcoin",
@@ -2915,4 +2916,5 @@
         },
         "last_updated": "2022-10-04T20:16:28.289Z"
     }
-]
+
+]}
