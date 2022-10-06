@@ -11,6 +11,24 @@ const paymentElement = elements.create("payment");
 paymentElement.mount("#payment-element");
 
 // -> search element
+// -> TODO add search button
+//const coinImput = 
+// document.getElementsByClassName('text').onsearch = function() {
+//     myFunction ()
+// }
+// myFunction () { 
+
+    
+// }
+// //document.getElementById("myInput").onsearch = function() {myFunction()};
+
+// function myFunction() {
+//   var x = document.getElementById("myInput");
+//   document.getElementById("demo").innerHTML = "You are searching for: " + x.value;
+// }
+
+
+
 
 
 //API coin
@@ -20,9 +38,10 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&fbclid=IwA
     .then(coinArr => {
         for (let i = 0; i < 10; i++) {
             displayInfo(coinArr[i])
+   
         }
+    // .then(coinArr => console.log(coinArr))
     })
-// -> TODO add search button
 
 
 
@@ -42,6 +61,7 @@ function displayInfo(coinObj) {
     // for (x in obj)
     // x- is key
     const tr = document.createElement('tr')
+    tr.className = "coinInfo"
 
     // -> add star img. created Favorit colomn
     td = document.createElement('td')
@@ -91,10 +111,35 @@ function displayInfo(coinObj) {
     td = document.createElement('td')
     tr.append(td)
     td.textContent = coinObj.price_change_percentage_24h
-
-    // This made an ERROR:
-    // td = document.createElement('td')
-    // tr.textContent = coinObj.price_change_percentage_24h
-
     coinList.append(tr);
+    // -> input number
+    td = document.createElement('td')
+    tr.append(td)
+    const coinInput = document.createElement('input')
+    coinInput.type = "number"
+    td.append(coinInput)
 }
+
+
+
+//-> keydown
+let coinLine = document.getElementsByClassName("coinInfo")
+coinLine.addEventListener('click', () => {
+    console.log('work')
+})
+
+
+// Show a spinner on payment submission
+function setLoading(isLoading) {
+        if (isLoading) {
+       
+      // Disable the button and show a spinner
+      document.querySelector("#submit").disabled = true;
+      document.querySelector("#spinner").classList.remove("hidden");
+      document.querySelector("#button-text").classList.add("hidden");
+    } else {
+      document.querySelector("#submit").disabled = false;
+      document.querySelector("#spinner").classList.add("hidden");
+      document.querySelector("#button-text").classList.remove("hidden");
+    }
+  }

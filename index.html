@@ -11,11 +11,11 @@
   <body>
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- The form of search -->
+    <!-- The form of search
     <form class="example" action="action_page.php">
       <input type="text" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
+    </form> -->
 
 
     <div class="header">
@@ -27,6 +27,19 @@
     <!-- <div>
       <ul id="searchButton">Search</ul>
     </div> -->
+
+    <!-- checkbox-->
+    <form>
+      <input type="checkbox" id="myCheck" onmouseover="myFunction()">
+    </form>
+    <script>
+    function myFunction() {
+      document.getElementById("myCheck").click();
+    }
+    </script>
+<!-- checkbox finish-->
+
+
     <table id="list">
         <tr id="tableHeader">
           <th>Favorite</th>
