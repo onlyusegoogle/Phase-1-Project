@@ -10,6 +10,9 @@ elements = stripe.elements({ appearance, clientSecret: 'pi_3LpN6OGTck0sdjJJ3qk2P
 const paymentElement = elements.create("payment");
 paymentElement.mount("#payment-element");
 
+// -> search element
+
+
 //API coin
 fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&fbclid=IwAR2seyvVJZbkupG8ZP75m6uh_cqGH5NeTLcq2l4v7cAPKCPF_jh-_Kvc9dg")//, {mode: "no-cors"})
     // TODO -> fetch(('http://localhost:3000/market'))
@@ -19,6 +22,9 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&fbclid=IwA
             displayInfo(coinArr[i])
         }
     })
+// -> TODO add search button
+
+
 
 //coinObj.data.forEach(x => console.log(x))
 // .then(coinArr => console.log(coinArr))
