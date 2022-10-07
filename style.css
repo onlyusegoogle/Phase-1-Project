@@ -29,10 +29,16 @@ body{
   font-size: 35px;
 }
 
-
+/* 
 {
   box-sizing: border-box;
+} */
+
+#textBox{
+  width: 4em;
 }
+
+
 
 /* Style the search field */
 form.example input[type=text] {

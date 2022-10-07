@@ -27,10 +27,6 @@ paymentElement.mount("#payment-element");
 //   document.getElementById("demo").innerHTML = "You are searching for: " + x.value;
 // }
 
-
-
-
-
 //API coin
 fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&fbclid=IwAR2seyvVJZbkupG8ZP75m6uh_cqGH5NeTLcq2l4v7cAPKCPF_jh-_Kvc9dg")//, {mode: "no-cors"})
     // TODO -> fetch(('http://localhost:3000/market'))
@@ -63,7 +59,7 @@ function displayInfo(coinObj) {
     const tr = document.createElement('tr')
     tr.className = "coinInfo"
 
-    // -> add star img. created Favorit colomn
+    // -> add star img. created Favorite colomn
     td = document.createElement('td')
     tr.append(td)
     let emptyStar = document.createElement('img')
@@ -116,6 +112,7 @@ function displayInfo(coinObj) {
     td = document.createElement('td')
     tr.append(td)
     const coinInput = document.createElement('input')
+    coinInput.id = "textBox"
     coinInput.type = "number"
     td.append(coinInput)
 }
