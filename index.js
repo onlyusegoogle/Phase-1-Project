@@ -122,18 +122,21 @@ function displayInfo(coinObj) {
 
 
 
-//-> keydown
-let coinLine = document.getElementsByClassName("coinInfo")
-coinLine.addEventListener('click', () => {
-    console.log('work')
+// //-> keydown
+// let coinLine = document.getElementsByClassName("coinInfo")
+// coinLine.addEventListener('click', () => {
+//     console.log('work')
+// })
+
+document.getElementById("payment-form").addEventListener("submit", (e) => {
+    e.preventDefault()
+    setLoading(true)
+
 })
-
-
 // Show a spinner on payment submission
 function setLoading(isLoading) {
         if (isLoading) {
-       
-      // Disable the button and show a spinner
+    // Disable the button and show a spinner
       document.querySelector("#submit").disabled = true;
       document.querySelector("#spinner").classList.remove("hidden");
       document.querySelector("#button-text").classList.add("hidden");

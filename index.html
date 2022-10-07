@@ -30,11 +30,13 @@
 
     <!-- checkbox-->
     <form>
-      <input type="checkbox" id="myCheck" onmouseover="myFunction()">
+      <input type="checkbox" id="myCheck" onmouseover="resetPaymentForm()">
+      <span>Reset</span>
     </form>
     <script>
-    function myFunction() {
+    function resetPaymentForm() {
       document.getElementById("myCheck").click();
+      setLoading(false)
     }
     </script>
 <!-- checkbox finish-->
