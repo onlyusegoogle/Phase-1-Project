@@ -10,6 +10,32 @@ elements = stripe.elements({ appearance, clientSecret: 'pi_3LpN6OGTck0sdjJJ3qk2P
 const paymentElement = elements.create("payment");
 paymentElement.mount("#payment-element");
 
+// -> show Curent Date
+
+// document.getElementById("CurentDateBtn").addEventListener("click", displayDate);
+// function displayDate() {
+//   document.getElementById("CurentDate").innerHTML = Date();
+// }
+
+
+//-> mouse out/mouse over
+var x = document.getElementById("CurentDateBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", displayDate);
+x.addEventListener("mouseout", myThirdFunction);
+function myFunction() {
+    document.getElementById("CurentDateBtn").innerHTML = "Click to Show Date<br>";
+}
+
+function myThirdFunction() {
+    document.getElementById("CurentDateBtn").innerHTML = "Hide Date<br>";
+}
+function displayDate() {
+    document.getElementById("CurentDateBtn").innerHTML += Date();
+}
+
+
+
 // -> search element
 // -> TODO add search button
 //const coinImput = 
@@ -18,7 +44,7 @@ paymentElement.mount("#payment-element");
 // }
 // myFunction () { 
 
-    
+
 // }
 // //document.getElementById("myInput").onsearch = function() {myFunction()};
 
@@ -38,9 +64,9 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&fbclid=IwA
     .then(coinArr => {
         for (let i = 0; i < 10; i++) {
             displayInfo(coinArr[i])
-   
+
         }
-    // .then(coinArr => console.log(coinArr))
+        // .then(coinArr => console.log(coinArr))
     })
 
 
@@ -63,7 +89,7 @@ function displayInfo(coinObj) {
     const tr = document.createElement('tr')
     tr.className = "coinInfo"
 
-    // -> add star img. created Favorit colomn
+    // -> added star img. created Favorit column
     td = document.createElement('td')
     tr.append(td)
     let emptyStar = document.createElement('img')
@@ -122,27 +148,46 @@ function displayInfo(coinObj) {
 
 
 
-// //-> keydown
-// let coinLine = document.getElementsByClassName("coinInfo")
+
+
+//-> keydown
+
+// let btn = document.createElement("button");
+// btn.innerHTML = "Submit";
+// btn.type = "submit";
+// btn.name = "formBtn";
+// document.body.appendChild(btn);
+
+// let coinLine = document.getElementsByClassName("coinInfo").createElement("button")
 // coinLine.addEventListener('click', () => {
 //     console.log('work')
 // })
 
-document.getElementById("payment-form").addEventListener("submit", (e) => {
+
+
+document.getElementById("payment-form").addEventListener('submit', (e) => {
     e.preventDefault()
     setLoading(true)
 
 })
+// -> mouseover event reset payment
+ducument.getElementById("myCheck").addEventListener('mouseover', () => {
+    document.getElementById("myCheck").click();
+    setLoading(false)
+}
+)
+
+
 // Show a spinner on payment submission
 function setLoading(isLoading) {
-        if (isLoading) {
-    // Disable the button and show a spinner
-      document.querySelector("#submit").disabled = true;
-      document.querySelector("#spinner").classList.remove("hidden");
-      document.querySelector("#button-text").classList.add("hidden");
+    if (isLoading) {
+        // Disable the button and show a spinner
+        document.querySelector("#submit").disabled = true;
+        document.querySelector("#spinner").classList.remove("hidden");
+        document.querySelector("#button-text").classList.add("hidden");
     } else {
-      document.querySelector("#submit").disabled = false;
-      document.querySelector("#spinner").classList.add("hidden");
-      document.querySelector("#button-text").classList.remove("hidden");
+        document.querySelector("#submit").disabled = false;
+        document.querySelector("#spinner").classList.add("hidden");
+        document.querySelector("#button-text").classList.remove("hidden");
     }
-  }
+}
